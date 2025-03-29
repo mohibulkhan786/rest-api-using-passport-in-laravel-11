@@ -76,6 +76,10 @@ DB_PASSWORD=
 php artisan install:api --passport
 ````
 
+````
+php artisan passport:client --personal
+````
+
 - ✅ Step3, In this step, we have to configure three places: <b>the model, the service provider, and the auth config file</b>. So, you just need to follow the changes in those files.
 
 - In the model, we added the HasApiTokens class of Passport.
@@ -283,7 +287,7 @@ class UserController extends BaseController
 - ✅ step 5, Now we need to create a migration for the posts table using the Laravel 11 php artisan command, so first, fire the command
 
 ````
-php artisan make:model Product -mcr
+php artisan make:migration create_products_table
 ````
 
 - After this command, you will find one file in the following path database/migrations, and you have to put the below code in your migration file to create the products table.
@@ -324,6 +328,8 @@ return new class extends Migration
 - After changing the migration file "products" table, you need to change the Product model file So, first got tothe file in this path <b>app/Models/Product.php</b> and put the following content in it:
 
 ````
+php artisan make:model Pdoduct
+````
 <?php
   
 namespace App\Models;
@@ -354,6 +360,10 @@ php artisan migrate
 ````
 
 - app/Http/Controllers/API/ProductController.php
+
+````
+php artisan make:controller API/ProductController
+````
 
 ````
 <?php
