@@ -330,6 +330,8 @@ return new class extends Migration
 ````
 php artisan make:model Pdoduct
 ````
+
+````
 <?php
   
 namespace App\Models;
